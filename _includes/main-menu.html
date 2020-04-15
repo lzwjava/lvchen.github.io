@@ -1,0 +1,9 @@
+<div id="main-menu" class="main-menu">
+  <ul>
+    <li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">首页</a></li>
+    <li><a href="{{site.baseurl}}/services/" class="{% if page.url contains 'services' %}current{% endif %}">成功案例</a></li>
+    <li><a href="{{site.baseurl}}/team/" class="{% if page.url contains 'team' %}current{% endif %}">团队介绍</a></li>
+    <li><a href="{{site.baseurl}}/testimonials/" class="{% if page.url contains 'testimonials' %}current{% endif %}">新闻中心</a></li>
+    <li><a href="{{site.baseurl}}/contact/" class="{% if page.url contains 'contact' %}current{% endif %}">联系绿臣</a></li>
+  </ul>
+</div>

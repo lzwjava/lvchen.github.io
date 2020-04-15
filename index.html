@@ -1,0 +1,71 @@
+---
+title: Jekyll Serif - Jekyll Small Business Theme
+layout: default
+bodyClass: page-home
+---
+
+<div class="intro pb-4">
+  <div class="container">
+    <h1>绿臣广告</h1>
+    <p>为设计与审美一一变现</p>
+  </div>
+</div>
+
+<!-- <div class="container pt-2">
+  <div class="call">
+    <div class="call-box-top">
+      <div class="call-phone"><strong>Phone: </strong> {{ site.data.contact.phone }} </div>
+      <div class="call-email"><strong>Email: </strong>
+        <a href="mailto:{{ site.data.contact.email }}">
+          {{ site.data.contact.email }}
+        </a>
+      </div>
+    </div>
+    <div class="call-box-bottom">
+      <a href="{{site.baseurl}}/contact" class="button">Contact</a>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container pt-5 pb-5 features-container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-4">特色</h2>
+    </div>
+    {% for feature in site.data.features %}
+    <div class="col-12 col-md-6 col-lg-4 mb-2">
+      <div class="feature">
+        {% if feature.image %}<div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image }}" /></div> {% endif %}
+        <h2 class="feature-title">{{ feature.title }}</h2>
+        <div class="feature-content">{{ feature.description }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div class="container pt-md-3 pb-md-7">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-3">服务</h2>
+    </div>
+    {% for service in site.services %}
+    <div class="col-12 col-md-4 mb-3">
+      <div class="service service-summary">
+        <div class="service-content">
+          {% if service.image %}<div class="service-image"><img  src="{{ service.image }}" /></div> {% endif %}
+          <h2 class="service-title">
+            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+          </h2>
+          {{ service.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- <div class="col-12 text-center">
+      <a class="button button-primary mt-2" href="{{site.baseurl}}/services">View All Services</a>
+    </div> -->
+  </div>
+</div>
